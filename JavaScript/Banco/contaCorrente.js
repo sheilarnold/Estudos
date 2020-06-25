@@ -1,11 +1,34 @@
+import { cliente } from "./cliente.js"
+
 export class contaCorrente {
-    cliente
+    static nContas = 0
+    _cliente
     agencia
-    saldo = 0
+    _saldo = 0
+
+    constructor(cli, ag){
+        this.agencia = ag
+        this.cliente = cli
+        contaCorrente.nContas += 1
+    }
+
+    set cliente(cli){
+        if(cli instanceof cliente){
+            this._cliente = cli 
+        }
+    }
+
+    get cliente(){
+        return this._cliente
+    }
+
+    get saldo(){
+        return this._saldo;
+    }
 
     saque(valor) {
         if(valor <= this.saldo){
-            this.saldo -= valor
+            this._saldo -= valor
             return true
         }else{
             return false
@@ -16,7 +39,7 @@ export class contaCorrente {
         if(valor <= 0){
             return false
         }else{
-            this.saldo += valor
+            this._saldo += valor
             return true
         }
     }
