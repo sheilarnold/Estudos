@@ -10,10 +10,10 @@ export class funcionario {
         this._senha
     }
 
-    get senha() {
-        return this._senha
+    autenticacao(senha) {
+        return senha == this._senha
     }
-    
+
     cadastrarSenha(senha) {
         this._senha = senha
     }

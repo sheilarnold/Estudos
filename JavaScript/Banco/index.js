@@ -5,9 +5,9 @@ import {diretor} from './Funcionarios/diretor.js'
 import {gerente} from './Funcionarios/gerente.js'
 import {sistemaAutenticacao} from './sistemaAutenticacao.js'
 
-/*
+
 const c1 = new cliente("Sheila C.S Arnold", 11166622233)
-const conta1 = new contaCorrente(c1 , 10001)
+//const conta1 = new contaCorrente(c1 , 10001)
 
 /*
 if(conta1.deposito(10000)){
@@ -32,14 +32,15 @@ console.log("CLIENTE: " + c1.nome + "\n CPF: " + c1.cpf + "\n AGÊNCIA: " + cont
 const cPoupanca1 = new contaPoupanca(50, c1, 10001)
 
 console.log(conta1)
-console.log(cPoupanca1)*/this
+console.log(cPoupanca1)*/
 
 const diretor1 = new diretor("Fernando Duarte", 10000, 12345678900)
 const gerente1 = new gerente("Daniele Zanini", 5000, 12345678910)
 
 diretor1.cadastrarSenha("123456789")
-const login = sistemaAutenticacao.login(diretor1, "123456789")
+c1.cadastrarSenha("123")
 
-console.log(login)
+console.log("DIRETOR: " + sistemaAutenticacao.login(diretor1, "123456789"))
+console.log("CLIENTE: " + sistemaAutenticacao.login(c1, "123"))
 
 console.log("\n***No total temos " + contaCorrente.nContas + " conta(s) registrada(s) no banco!***")
