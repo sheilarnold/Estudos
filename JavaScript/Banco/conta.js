@@ -1,6 +1,11 @@
 export class conta {
 
     constructor(saldoInicial, cliente, agencia) {
+        
+        if(this.constructor == conta){
+            throw new Error("Área restrita! Você não possui permissão de acesso direto.")//impede a instanciaçã direta de um obj do tipo conta
+        }
+
         this._saldo = saldoInicial
         this._cliente = cliente
         this._agencia = agencia
